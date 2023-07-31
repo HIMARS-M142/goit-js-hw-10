@@ -1,0 +1,10 @@
+.breed-select {
+  margin-bottom: 20px;
+}
+.cat-info {
+  display: flex;
+  gap: 30px;
+}
+.text-div {
+  width: 400px;
+}
