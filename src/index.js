@@ -8,6 +8,7 @@ const divEl = document.querySelector('.cat-info');
 loaderEl.hidden = false;
 errorEl.hidden = true;
 selectEl.hidden = true;
+
 fetchBreeds().then(allCats).catch(onError).finally(isHidden);
 
 selectEl.addEventListener('change', onSelectChange);
@@ -37,10 +38,12 @@ function catSearch(cat) {
 <div class="text-div"><h2>${name}</h2>
 <p>${description}</p>
 <p><b>Temperament: </b>${temperament}</p></div>`;
+  divEl.style.display = 'flex';
 }
 
 function onError(err) {
   Notiflix.Notify.failure(errorEl.textContent);
+  divEl.style.display = 'none';
 }
 
 function isHidden(finaly) {
